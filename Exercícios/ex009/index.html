@@ -1,0 +1,447 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>AZDOME M550 — Dash Cam 4K Tripla | Segurança em Cada Viagem</title>
+
+  
+
+  <style>
+    :root{
+      --bg:#06070a; --panel:#0e1530; --panel-2:#0b1226;
+      --accent:#ff7a1a; --accent-2:#ff9b50; --muted:#98a4c8; --text:#eaf0ff;
+      --card:#0f1930;
+      --radius:14px;
+      --maxw:1200px;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{margin:0;font-family:Poppins,system-ui,-apple-system,Segoe UI,Roboto,Arial; background:linear-gradient(180deg,var(--bg),#020316 120%); color:var(--text); -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale;}
+    a{color:inherit;text-decoration:none}
+    .container{max-width:var(--maxw);margin:0 auto;padding:20px}
+    header{position:fixed;top:0;left:0;right:0;z-index:80;background:rgba(4,6,10,.6);backdrop-filter:blur(6px);border-bottom:1px solid rgba(255,255,255,.03)}
+    .nav{display:flex;align-items:center;justify-content:space-between;gap:16px;max-width:var(--maxw);margin:0 auto;padding:12px 20px}
+    .brand{display:flex;align-items:center;gap:12px}
+    .brand .logo{width:42px;height:42px;border-radius:10px;background:linear-gradient(135deg,var(--accent),#ffb380);display:flex;align-items:center;justify-content:center;font-weight:800;color:#08101a}
+    nav ul{list-style:none;display:flex;gap:18px;margin:0;padding:0;align-items:center}
+    nav a{font-weight:600;color:var(--muted);font-size:.95rem}
+    .cta{background:linear-gradient(90deg,var(--accent),var(--accent-2));padding:10px 16px;border-radius:10px;color:#051018;font-weight:800;box-shadow:0 10px 30px rgba(255,122,26,.12)}
+    /* Hero */
+    main{margin-top:84px}
+    .hero{padding:48px 0;display:grid;grid-template-columns:1fr 520px;gap:28px;align-items:center}
+    .hero .eyebrow{display:inline-block;background:rgba(255,255,255,.04);padding:6px 10px;border-radius:999px;color:var(--muted);font-weight:600;margin-bottom:12px}
+    h1{font-size:2.6rem;line-height:1.05;margin:0 0 12px}
+    .lead{color:var(--muted);font-size:1.05rem;margin-bottom:18px}
+    .hero .card{background:linear-gradient(180deg, rgba(255,255,255,.02), rgba(255,255,255,.01));padding:22px;border-radius:18px;border:1px solid rgba(255,255,255,.04)}
+    .mock{border-radius:12px;overflow:hidden;border:1px solid rgba(255,255,255,.04);background:linear-gradient(180deg,#071028,#0b1530);display:flex;align-items:center;justify-content:center;padding:18px}
+    .mock img{width:100%;height:auto;border-radius:10px;box-shadow:0 30px 60px rgba(0,0,0,.6)}
+    .kpis{display:flex;gap:12px;margin-top:16px}
+    .kpi{background:rgba(255,255,255,.02);padding:10px 12px;border-radius:10px;font-weight:700;color:var(--muted)}
+    /* Sections */
+    section{padding:44px 0}
+    .split{display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:start}
+    .features-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .feature{background:var(--card);padding:18px;border-radius:12px;border:1px solid rgba(255,255,255,.03);text-align:center}
+    .feature .ic{font-size:28px;margin-bottom:10px;color:var(--accent)}
+    .video-wrap{border-radius:12px;overflow:hidden;border:1px solid rgba(255,255,255,.04);background:#000}
+    /* Comparison */
+    .compare{display:grid;gap:12px}
+    table{width:100%;border-collapse:collapse;background:transparent;color:var(--muted)}
+    table th, table td{padding:12px;border-bottom:1px solid rgba(255,255,255,.03);text-align:left}
+    table th{color:var(--muted);font-weight:700;background:rgba(255,255,255,.01)}
+    .price-boxes{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:18px}
+    .pkg{background:linear-gradient(180deg,#08132b,#071022);padding:18px;border-radius:12px;border:1px solid rgba(255,255,255,.04);text-align:center}
+    .pkg .price{font-size:24px;font-weight:900;color:var(--accent);margin:10px 0}
+    .pkg .btn{margin-top:12px;display:inline-block}
+    /* Testimonial */
+    .testimonials{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+    .testimonial{background:var(--card);padding:16px;border-radius:12px;border:1px solid rgba(255,255,255,.03)}
+    /* FAQ */
+    .faq details{background:var(--card);padding:12px;border-radius:10px;margin-bottom:10px;border:1px solid rgba(255,255,255,.03)}
+    /* CTA band */
+    .cta-band{display:flex;gap:18px;align-items:center;justify-content:space-between;background:linear-gradient(90deg, rgba(255,122,26,.06), rgba(255,155,80,.03));padding:20px;border-radius:12px;border:1px solid rgba(255,255,255,.03)}
+    /* Footer */
+    footer{padding:36px 0;color:var(--muted);border-top:1px solid rgba(255,255,255,.03);margin-top:28px}
+    /* Responsive */
+    @media (max-width:1100px){
+      .hero{grid-template-columns:1fr}
+      .split{grid-template-columns:1fr}
+      .features-grid{grid-template-columns:repeat(2,1fr)}
+      .price-boxes{grid-template-columns:1fr}
+      .testimonials{grid-template-columns:1fr}
+    }
+    @media (max-width:680px){
+      nav ul{display:none}
+      .nav{padding:12px}
+      .brand .title{display:none}
+      h1{font-size:1.6rem}
+    }
+
+    /* small helpers */
+    .muted{color:var(--muted)}
+    .small{font-size:.9rem}
+    .center{text-align:center}
+    .mb{margin-bottom:12px}
+    .pill{display:inline-block;padding:6px 10px;border-radius:999px;background:rgba(255,255,255,.03);font-weight:700;color:var(--accent);font-size:.9rem}
+    .stamped{font-size:.9rem;color:var(--muted);margin-top:8px}
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="nav container" role="navigation" aria-label="Principal">
+      <div class="brand" aria-hidden="false">
+        <div class="logo">M550</div>
+        <div class="title"><strong>AZDOME M550</strong></div>
+      </div>
+
+      <nav>
+        <ul>
+          <li><a href="#inicio">Início</a></li>
+          <li><a href="#sobre">Sobre a Câmera</a></li>
+          <li><a href="#recursos">Recursos</a></li>
+          <li><a href="#depoimentos">Depoimentos</a></li>
+          <li><a href="#comprar" class="cta">Comprar Agora</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="inicio">
+    <div class="container">
+      <!-- HERO -->
+      <section class="hero" aria-labelledby="hero-title">
+        <div>
+          <span class="eyebrow">Lançamento • Estoque Limitado</span>
+          <h1 id="hero-title">Dirija com segurança máxima e registre cada detalhe da sua viagem em <span style="color:var(--accent)">4K Ultra HD</span></h1>
+          <p class="lead">A Câmera AZDOME M550 protege você com 3 lentes (frontal, traseira e interna), visão noturna, GPS e Wi‑Fi — ideal para provas em acidentes e monitoramento 24/7.</p>
+
+          <div style="display:flex;gap:12px;align-items:center;margin-top:10px">
+            <a id="heroCta" href="#" class="cta" target="_blank" rel="noopener noreferrer"><!-- coloque seu link aqui -->👉 Comprar Agora na Shopee</a>
+            <a href="#recursos" class="small muted" style="align-self:center">Ver recursos</a>
+          </div>
+
+          <div class="kpis" style="margin-top:18px">
+            <div class="kpi">+12.000 clientes</div>
+            <div class="kpi">Avaliação média 4.8★</div>
+            <div class="kpi">4K Triple Lens</div>
+          </div>
+        </div>
+
+        <aside class="card mock" aria-hidden="true" style="width:100%">
+          <!-- Replace src with your mockup image -->
+          <img src="img/mockup-m550-triple.jpg" alt="Mockup Câmera AZDOME M550 instalada">
+        </aside>
+      </section>
+
+      <!-- SOBRE -->
+      <section id="sobre">
+        <div class="split">
+          <div>
+            <h2>Sobre a Câmera AZDOME M550</h2>
+            <p>Criamos este espaço para apresentar a AZDOME M550 — a dash cam mais completa do mercado. Nosso objetivo é simples: dar segurança, tranquilidade e provas em cada viagem que você fizer. A M550 grava em 4K, possui visão noturna superior e um sistema triplo de lentes para cobrir todos os ângulos do seu veículo.</p>
+
+            <ul class="small muted">
+              <li>Gravação frontal 4K + traseira + interna</li>
+              <li>Visão noturna com sensor de alta sensibilidade</li>
+              <li>GPS integrado registra velocidade e rota</li>
+              <li>Conexão Wi‑Fi com app para visualizar e baixar vídeos</li>
+            </ul>
+
+            <div style="margin-top:14px">
+              <a href="#comprar" class="cta"><!-- coloque seu link aqui -->Comprar Agora</a>
+              <span class="stamped">Entrega rápida • Pagamento seguro • Garantia</span>
+            </div>
+          </div>
+
+          <div style="display:flex;flex-direction:column;gap:12px">
+            <img src="img/camera-detail.jpg" alt="Detalhe da AZDOME M550">
+            <div style="background:linear-gradient(180deg,rgba(255,255,255,.01),transparent);padding:12px;border-radius:10px;border:1px solid rgba(255,255,255,.03)">
+              <strong>Ideal para:</strong>
+              <p class="small muted">Motoristas de aplicativo, empresas de frota, famílias e qualquer condutor que queira provas reais em caso de acidente.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- PROBLEMA & SOLUÇÃO -->
+      <section aria-labelledby="prob-title">
+        <div class="split">
+          <div>
+            <h3 id="prob-title">⚠️ Problemas que motoristas enfrentam</h3>
+            <ul class="small muted">
+              <li>Sem provas em acidentes: processo longo e prejuízo financeiro</li>
+              <li>Dificuldade em comprovar sua versão para seguradoras</li>
+              <li>Golpes e fraudes no trânsito que custam tempo e dinheiro</li>
+            </ul>
+            <p class="muted small">Sem imagens claras e confiáveis, sua palavra nem sempre vale contra alegações — e a burocracia costuma demorar.</p>
+          </div>
+          <div>
+            <h3>✅ Como a AZDOME M550 resolve</h3>
+            <p>Com gravações simultâneas em três ângulos, alta resolução 4K e timestamps com GPS, você terá provas que agilizam processos e evitam prejuízos. Além disso, o modo estacionamento e sensores de impacto garantem monitoramento mesmo quando o carro está parado.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- RECURSOS E BENEFÍCIOS -->
+      <section id="recursos">
+        <h2>Recursos e Benefícios</h2>
+        <div class="features-grid" style="margin-top:18px">
+          <div class="feature">
+            <div class="ic">📷</div>
+            <strong>Três câmeras em 4K</strong>
+            <p class="muted small">Frontal, traseira e interna — cobertura total e detalhes nítidos.</p>
+          </div>
+          <div class="feature">
+            <div class="ic">🌙</div>
+            <strong>Visão noturna avançada</strong>
+            <p class="muted small">Grava imagens utilizáveis mesmo em ambientes com pouca luz.</p>
+          </div>
+          <div class="feature">
+            <div class="ic">📍</div>
+            <strong>GPS integrado</strong>
+            <p class="muted small">Registra rota, velocidade e hora — prova robusta e confiável.</p>
+          </div>
+          <div class="feature">
+            <div class="ic">📶</div>
+            <strong>Wi‑Fi + App</strong>
+            <p class="muted small">Baixe e compartilhe vídeos direto no seu celular sem abrir o carro.</p>
+          </div>
+          <div class="feature">
+            <div class="ic">🚗</div>
+            <strong>Modo estacionamento</strong>
+            <p class="muted small">Gravação por movimento/impacto, protege seu carro quando estacionado.</p>
+          </div>
+          <div class="feature">
+            <div class="ic">🔧</div>
+            <strong>Compatível 12V / 24V</strong>
+            <p class="muted small">Funciona em carros, motos com adaptador e caminhões.</p>
+          </div>
+        </div>
+
+        <div class="center" style="margin-top:20px">
+          <a href="#comprar" class="cta"><!-- coloque seu link aqui -->Quero minha M550 agora</a>
+        </div>
+      </section>
+
+      <!-- DEMONSTRAÇÃO (vídeo placeholder) -->
+      <section>
+        <h2>Veja em ação</h2>
+        <div class="video-wrap" style="margin-top:12px;min-height:260px;display:flex;align-items:center;justify-content:center">
+          <!-- Substitua o iframe abaixo pelo seu link de vídeo (YouTube/Vimeo) ou vídeo local -->
+          <!-- Exemplo: <iframe src="https://www.youtube.com/embed/SEU_VIDEO" ...></iframe> -->
+          <div style="color:var(--muted);padding:18px">[Coloque aqui o vídeo demonstrativo — ex: gravação 4K noturna, visão tripla]</div>
+        </div>
+        <p class="muted small" style="margin-top:12px">Demonstração real de gravação: imagine ter esse nível de detalhe sempre que precisar provar o que aconteceu.</p>
+      </section>
+
+      <!-- COMPARAÇÃO -->
+      <section>
+        <h2>Antes x Depois / Comparativo</h2>
+        <div style="margin-top:12px" class="compare">
+          <table aria-describedby="compare-desc">
+            <thead>
+              <tr>
+                <th>Recurso</th>
+                <th>Sem Dash Cam</th>
+                <th>Câmera Comum</th>
+                <th>AZDOME M550</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>Qualidade de imagem</td><td>—</td><td>HD</td><td>4K frontal + traseira + interna</td></tr>
+              <tr><td>Visão noturna</td><td>—</td><td>fraca</td><td>avançada</td></tr>
+              <tr><td>GPS / timestamp</td><td>—</td><td>opcional</td><td>integrado</td></tr>
+              <tr><td>Modo estacionamento</td><td>—</td><td>nem sempre</td><td>sim, inteligente</td></tr>
+              <tr><td>App / Wi‑Fi</td><td>—</td><td>limitado</td><td>completo</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- HISTÓRIA REAL -->
+      <section>
+        <h2>História real: prova que salva</h2>
+        <p>“Um cliente conseguiu comprovar sua inocência em um acidente graças à gravação traseira da M550. O vídeo foi aceito pela seguradora e evitou um prejuízo de R$ 15.000.” — relato verídico de usuário.</p>
+        <div style="margin-top:12px">
+          <img src="img/case-collision.jpg" alt="Imagem caso real" style="border-radius:10px;border:1px solid rgba(255,255,255,.03)">
+        </div>
+      </section>
+
+      <!-- TESTIMONIALS -->
+      <section id="depoimentos">
+        <h2>O que motorista reais dizem</h2>
+        <div class="testimonials" style="margin-top:12px">
+          <div class="testimonial">
+            <strong>⭐⭐⭐⭐⭐ Carlos, SP</strong>
+            <p class="muted small">“Imagem excelente, mesmo à noite. Me salvou em um acidente.”</p>
+          </div>
+          <div class="testimonial">
+            <strong>⭐⭐⭐⭐⭐ Juliana, RJ</strong>
+            <p class="muted small">“App muito prático, recomendo demais. A instalação foi simples.”</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- OFERTA / KITS -->
+      <section aria-labelledby="kits-title">
+        <h2 id="kits-title">Ofertas e Kits</h2>
+        <p class="muted small">Escolha a opção que mais se encaixa no seu uso — o kit indicado costuma ser o de 3 unidades (melhor custo‑benefício).</p>
+
+        <div class="price-boxes" style="margin-top:14px">
+          <div class="pkg">
+            <h4>1 Frasco</h4>
+            <div class="price">R$ —</div>
+            <p class="small muted">Ideal para testar.</p>
+            <a href="#" class="cta" style="display:inline-block;margin-top:10px"><!-- coloque seu link aqui -->Comprar 1 unidade</a>
+          </div>
+
+          <div class="pkg">
+            <h4>3 Unidades <span style="font-size:.9rem;color:var(--muted)">(Mais vendido)</span></h4>
+            <div class="price">R$ —</div>
+            <p class="small muted">Melhor custo por unidade e ideal para família/frota.</p>
+            <a href="#" class="cta" style="display:inline-block;margin-top:10px"><!-- coloque seu link aqui -->Comprar 3 unidades</a>
+          </div>
+
+          <div class="pkg">
+            <h4>5 Unidades</h4>
+            <div class="price">R$ —</div>
+            <p class="small muted">Economia máxima — estoques protegidos.</p>
+            <a href="#" class="cta" style="display:inline-block;margin-top:10px"><!-- coloque seu link aqui -->Comprar 5 unidades</a>
+          </div>
+        </div>
+
+        <!-- CTA BAND -->
+        <div class="cta-band" style="margin-top:20px;">
+          <div>
+            <strong style="font-size:1.1rem">Oferta especial por tempo limitado</strong>
+            <div class="muted small">Frete rápido • Garantia de satisfação • Parcelamento disponível</div>
+          </div>
+          <div style="text-align:right">
+            
+            <div class="muted small" style="margin-top:6px">Promoção válida enquanto durar o estoque</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- GARANTIA -->
+      <section>
+        <h2>Garantia & Segurança</h2>
+        <p class="muted small">Compra segura, envio com rastreamento e garantia contra defeitos. Consulte políticas no checkout do parceiro antes de finalizar.</p>
+        <div style="display:flex;gap:12px;margin-top:12px;flex-wrap:wrap">
+          <div class="pill">💳 Pagamento seguro</div>
+          <div class="pill">🚚 Envio com rastreamento</div>
+          <div class="pill">🔒 Garantia contra defeitos</div>
+        </div>
+      </section>
+
+      <!-- FAQ -->
+      <section>
+        <h2>FAQ — Perguntas frequentes</h2>
+        <div style="margin-top:12px">
+          <div class="faq">
+            <details><summary>❓ A câmera grava mesmo com o carro desligado?</summary><div class="muted small">Sim, modo estacionamento inteligente grava por movimento/impacto (consulte instalação para bateria auxiliar).</div></details>
+            <details><summary>❓ Preciso pagar mensalidade?</summary><div class="muted small">Não. Apenas a compra do equipamento. O app é gratuito.</div></details>
+            <details><summary>❓ Funciona em qualquer carro?</summary><div class="muted small">Sim, compatível com 12V e 24V (use adaptador onde necessário).</div></details>
+            <details><summary>❓ Tem garantia?</summary><div class="muted small">Sim — garantia contra defeitos de fabricação (veja detalhes com o vendedor).</div></details>
+          </div>
+        </div>
+      </section>
+
+      <!-- CTA FINAL -->
+      <section id="comprar" class="center" style="margin-top:12px">
+        <div style="max-width:900px;margin:0 auto;padding:22px;border-radius:12px;background:linear-gradient(180deg,rgba(255,255,255,.01),transparent);border:1px solid rgba(255,255,255,.03)">
+          <h2>Não arrisque dirigir sem provas.</h2>
+          <p class="muted small">Garanta já a sua AZDOME M550 e tenha tranquilidade em cada viagem.</p>
+
+          <!-- Opcional: contador regressivo (ativa no JS) -->
+          <div id="countdown" style="font-weight:900;color:var(--accent);font-size:1.4rem;margin:12px 0"></div>
+
+          <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:8px">
+            <a id="finalCta" href="#" class="cta" style="min-width:220px;padding:12px 20px"><!-- coloque seu link aqui -->Comprar Agora na Shopee</a>
+            <a href="#kits" class="small muted" style="align-self:center">Ver kits</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- CONTATO -->
+      <section>
+        <h2>Contato</h2>
+        <p class="muted small">📧 <a href="mailto:atendimento@cameraM550.com">atendimento@cameraM550.com</a> • 📱 WhatsApp: (xx) xxxxx-xxxx</p>
+      </section>
+
+    </div> <!-- container -->
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container center">
+      <div style="margin-bottom:12px"><a href="#" class="muted small">Política de Privacidade</a> • <a href="#" class="muted small">Termos de Uso</a> • <a href="#" class="muted small">Redes Sociais</a></div>
+      <div class="muted small">© <span id="yr"></span> AZDOME M550 — Conteúdo informativo. Não substitui orientações técnicas.</div>
+      
+  </footer>
+
+  <!-- SCRIPTS -->
+  <script>
+    // Ano no rodapé
+    document.getElementById('yr').textContent = new Date().getFullYear();
+
+    // Smooth scroll for internal links
+    document.querySelectorAll('a[href^="#"]').forEach(a=>{
+      a.addEventListener('click', function(e){
+        const href = this.getAttribute('href');
+        if(href.length>1){
+          const el = document.querySelector(href);
+          if(el){ e.preventDefault(); el.scrollIntoView({behavior:'smooth', block:'start'}); }
+        }
+      });
+    });
+
+    // COUNTDOWN — ativa por padrão, mas você pode comentar caso não queira usar
+    // Defina a data limite: ano, mêsIndex(0-Jan), dia, hora, min, seg
+    // Exemplo: 2025, 7, 26, 23, 59, 59 => 26 AGO 2025 23:59:59
+    (function(){
+      // Se quiser desativar, comente toda essa função ou retorne imediatamente
+      const COUNT_ID = 'countdown';
+      const BTN_ID = 'finalCta';
+      const enabled = true; // coloque false para desativar contador
+      if(!enabled) return;
+
+      // Ajuste aqui a DEADLINE
+      const DEADLINE = new Date(2025, 7, 26, 23, 59, 59).getTime();
+
+      function pad(n){ return n<10? '0'+n : n; }
+      const el = document.getElementById(COUNT_ID);
+      const btn = document.getElementById(BTN_ID);
+      const heroBtn = document.getElementById('heroCta');
+
+      function tick(){
+        const now = Date.now();
+        const t = DEADLINE - now;
+        if(t <= 0){
+          if(el) el.innerText = "⏰ Oferta encerrada";
+          if(btn){ btn.innerText = "Oferta Encerrada"; btn.style.opacity=.6; btn.style.pointerEvents='none'; btn.href="#"; }
+          if(heroBtn){ heroBtn.style.opacity=.6; heroBtn.style.pointerEvents='none'; heroBtn.href="#"; }
+          clearInterval(timer);
+          return;
+        }
+        const days = Math.floor(t / (1000*60*60*24));
+        const hours = Math.floor((t % (1000*60*60*24)) / (1000*60*60));
+        const minutes = Math.floor((t % (1000*60*60)) / (1000*60));
+        const seconds = Math.floor((t % (1000*60)) / 1000);
+        let out = '';
+        if(days>0) out += days + 'd ';
+        out += pad(hours)+'h '+pad(minutes)+'m '+pad(seconds)+'s';
+        if(el) el.innerText = out;
+      }
+      tick();
+      const timer = setInterval(tick, 1000);
+    })();
+
+    // NOTE: Todos os links principais estão com href="#" e comentário para substituição:
+    // <!-- coloque seu link aqui --> substitua pelo seu link da Shopee / afiliado.
+  </script>
+</body>
+</html>
