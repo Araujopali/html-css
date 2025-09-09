@@ -1,12 +1,9 @@
 @charset "UTF-8";
 
-<style>
 @import url('https://fonts.googleapis.com/css2?family=Passion+One:wght@400;700;900&display=swap');
-</style>
 
-<style>
 @import url('https://fonts.googleapis.com/css2?family=Sriracha&display=swap');
-</style>
+
 
 :root {
     --font1: 'vardana', 'geneva', 'tahona', 'sans-sarif';
@@ -39,13 +36,15 @@ header > h1 {
     padding: 50px;
     font-variant: small-caps;
     font-family: var(--font2);
-    font-size: 10vh;
+    font-size: 15vh;
+    
 
 }
 
 header > p {
     padding: 50px;
     font-size: 2em;
+    
 
 }
 
@@ -59,6 +58,7 @@ header a, footer a {
 header a:hover, footer a:hover {
 
     text-decoration: underline;
+    color: blue;
 }
 
 section {
@@ -85,20 +85,29 @@ section.normal {
 section.imagem {
     background-color: rgb(58, 56, 56);
     color: white;
+    box-shadow: inset 6px 6px 13px 0px black;
+    background-attachment: fixed;
 
 }
 
 section.imagem > p {
     display: inline-block;
-    background-color: rgb(32, 31, 31);
+    background-color: rgba(37, 37, 37, 0.26);
+    text-shadow: 1px 1px 0px black;
+
+   
 }
 
-section#idimg01 {
-    background-image: url('../imagens/background001.jpg');
+
+section#img01 {
+    background-image: url('imagens/background001.jpg');
+    background-position: right center;
+    background-size: cover;
 }
 
-section#idimg02 {
-    background-image: url('../imagens/background002.jpg');
+section#img02 {
+    background-image: url('imagens/background002.jpg');
+    background-size: cover;
 
 }
 
