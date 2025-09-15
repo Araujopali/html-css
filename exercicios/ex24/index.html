@@ -1,12 +1,536 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    
-</body>
-</html>
+import { Button } from "@/components/ui/button";
+import { Card } from "@/components/ui/card";
+import { Check, Shield, Droplets, Users, User, Star, Play, Phone, ChevronDown } from "lucide-react";
+import prosteriteProduct from "@/assets/prosterite-product.jpg";
+import prostateAnatomy from "@/assets/prostate-anatomy.jpg";
+import doctorTestimonial from "@/assets/doctor-testimonial.jpg";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+
+const Index = () => {
+  const benefits = [
+    "Diminui a vontade de urinar frequentemente",
+    "Reduz inflamações",
+    "Ajuda no esvaziamento completo da bexiga",
+    "Melhora a qualidade do sono",
+    "Promove vitalidade e energia",
+  ];
+
+  const problems = [
+    {
+      icon: <Droplets className="w-8 h-8 text-prosterite-blue" />,
+      title: "Sensação de bexiga cheia",
+      description: "Elimine a sensação constante de bexiga cheia"
+    },
+    {
+      icon: <Shield className="w-8 h-8 text-prosterite-blue" />,
+      title: "Fluxo urinário fraco",
+      description: "Melhore significativamente seu fluxo urinário"
+    },
+    {
+      icon: <User className="w-8 h-8 text-prosterite-blue" />,
+      title: "Cirurgias",
+      description: "Reduz o risco de procedimentos invasivos"
+    },
+    {
+      icon: <Users className="w-8 h-8 text-prosterite-blue" />,
+      title: "Exames de Toque",
+      description: "Diminui a necessidade de exames constantes"
+    },
+  ];
+
+  const packages = [
+    {
+      bottles: 5,
+      price: "12x 39,86",
+      label: "Mais Vendido",
+      discount: "55% OFF"
+    },
+    {
+      bottles: 3,
+      price: "12x 29,82",
+      label: "Recomendado",
+      discount: "45% OFF"
+    },
+    {
+      bottles: 1,
+      price: "12x 19,78",
+      label: "Experimente",
+      discount: "25% OFF"
+    },
+    {
+      bottles: 10,
+      price: "12x 59,94",
+      label: "Máximo Desconto",
+      discount: "65% OFF"
+    },
+  ];
+
+  const ingredients = [
+    {
+      name: "Óleo de Abóbora",
+      description: "Rico em zinco e ácidos graxos essenciais"
+    },
+    {
+      name: "Óleo de Abacate",
+      description: "Fonte de vitaminas lipossolúveis"
+    },
+    {
+      name: "Zinco",
+      description: "Mineral essencial para a saúde da próstata"
+    },
+    {
+      name: "Cobre",
+      description: "Antioxidante natural poderoso"
+    },
+    {
+      name: "Licopeno de Tomate",
+      description: "Proteção celular avançada"
+    },
+    {
+      name: "Magnésio",
+      description: "Relaxamento muscular e bem-estar"
+    },
+  ];
+
+  const testimonials = [
+    {
+      name: "João Silva",
+      age: "64 anos",
+      rating: 5,
+      text: "Em 30 dias já senti a diferença. Não acordo mais de madrugada para urinar!"
+    },
+    {
+      name: "Carlos Mendes",
+      age: "58 anos", 
+      rating: 5,
+      text: "Produto fantástico! Minha qualidade de vida melhorou 100%."
+    },
+    {
+      name: "Roberto Santos",
+      age: "71 anos",
+      rating: 5,
+      text: "Recomendo para todos os homens. Resultado surpreendente!"
+    },
+  ];
+
+  const faqItems = [
+    {
+      question: "Como devo utilizar o produto?",
+      answer: "Tome 2 cápsulas ao dia, preferencialmente antes das principais refeições, com um copo de água."
+    },
+    {
+      question: "O produto é aprovado pela Anvisa?",
+      answer: "Sim, o Prosterite possui fabricação autorizada pela ANVISA, garantindo sua segurança e eficácia."
+    },
+    {
+      question: "Tem efeitos colaterais?",
+      answer: "Por ser 100% natural, o Prosterite não possui efeitos colaterais quando usado conforme as recomendações."
+    },
+    {
+      question: "Qual o prazo de entrega?",
+      answer: "O prazo de entrega varia de 5 a 10 dias úteis para todo o Brasil, com rastreamento incluído."
+    },
+  ];
+
+  return (
+    <div className="min-h-screen">
+      {/* Header */}
+      <header className="bg-prosterite-yellow py-3">
+        <div className="container mx-auto text-center">
+          <p className="text-prosterite-blue font-bold text-sm uppercase tracking-wide">
+            PRODUTO 100% NATURAL, APROVADO PELA ANVISA E FABRICADO NO BRASIL
+          </p>
+        </div>
+      </header>
+
+      {/* Hero Section */}
+      <section className="py-16 bg-white">
+        <div className="container mx-auto grid md:grid-cols-2 gap-12 items-center">
+          <div className="flex justify-center">
+            <img 
+              src={prosteriteProduct} 
+              alt="Prosterite - Suplemento para Próstata" 
+              className="max-w-md w-full h-auto"
+            />
+          </div>
+          
+          <div className="space-y-6">
+            <h1 className="text-3xl md:text-4xl font-bold text-prosterite-blue leading-tight">
+              A SOLUÇÃO COMPLETA PARA A SAÚDE DA PRÓSTATA
+            </h1>
+            
+            <p className="text-gray-600 text-lg leading-relaxed">
+              Descubra como dar adeus aos sintomas urinários e melhorar sua qualidade de vida com o Prosterite – fórmula 100% natural que transforma sua saúde.
+            </p>
+
+            <div className="space-y-3">
+              {benefits.map((benefit, index) => (
+                <div key={index} className="flex items-center space-x-3">
+                  <div className="bg-prosterite-green rounded-full p-1">
+                    <Check className="w-4 h-4 text-white" />
+                  </div>
+                  <span className="text-gray-700">{benefit}</span>
+                </div>
+              ))}
+            </div>
+
+            <Button variant="cta" className="w-full md:w-auto">
+              Quero o meu agora!
+            </Button>
+          </div>
+        </div>
+      </section>
+
+      {/* Problems Section */}
+      <section className="py-16 bg-prosterite-light-gray">
+        <div className="container mx-auto text-center">
+          <h2 className="text-3xl font-bold text-prosterite-blue mb-12">
+            SOLUÇÃO PARA MÚLTIPLOS PROBLEMAS DA PRÓSTATA
+          </h2>
+          
+          <div className="grid md:grid-cols-4 gap-8">
+            {problems.map((problem, index) => (
+              <Card key={index} className="p-6 text-center space-y-4 hover:shadow-lg transition-shadow">
+                <div className="flex justify-center">
+                  {problem.icon}
+                </div>
+                <h3 className="font-bold text-prosterite-blue">{problem.title}</h3>
+                <p className="text-gray-600 text-sm">{problem.description}</p>
+              </Card>
+            ))}
+          </div>
+          
+          <div className="mt-8">
+            <Button variant="cta">
+              Resolver meus problemas agora!
+            </Button>
+          </div>
+        </div>
+      </section>
+
+      {/* Social Proof - Testimonials */}
+      <section className="py-16 bg-prosterite-blue">
+        <div className="container mx-auto text-center">
+          <h2 className="text-3xl font-bold text-white mb-4">
+            RESULTADOS QUE <span className="text-prosterite-yellow">MUDAM A VIDA</span> DE NOSSOS CLIENTES
+          </h2>
+          
+          <div className="grid md:grid-cols-3 gap-8 mt-12">
+            {testimonials.map((testimonial, index) => (
+              <Card key={index} className="p-6 bg-white relative">
+                <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
+                  <div className="bg-prosterite-blue rounded-full p-2">
+                    <Play className="w-6 h-6 text-white" />
+                  </div>
+                </div>
+                <div className="pt-4">
+                  <div className="flex justify-center mb-2">
+                    {[...Array(testimonial.rating)].map((_, i) => (
+                      <Star key={i} className="w-5 h-5 text-prosterite-yellow fill-current" />
+                    ))}
+                  </div>
+                  <p className="text-gray-700 mb-4">"{testimonial.text}"</p>
+                  <div>
+                    <p className="font-bold text-prosterite-blue">{testimonial.name}</p>
+                    <p className="text-gray-500 text-sm">{testimonial.age}</p>
+                  </div>
+                </div>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Pricing Section */}
+      <section className="py-16 bg-white">
+        <div className="container mx-auto text-center">
+          <h2 className="text-3xl font-bold text-prosterite-blue mb-12">
+            ESCOLHA A MELHOR OFERTA PARA VOCÊ
+          </h2>
+          
+          <div className="grid md:grid-cols-4 gap-6">
+            {packages.map((pkg, index) => (
+              <Card key={index} className="p-6 relative border-2 hover:border-prosterite-green transition-colors">
+                {pkg.label && (
+                  <div className="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-prosterite-yellow text-prosterite-blue px-4 py-1 rounded-full text-xs font-bold">
+                    {pkg.label}
+                  </div>
+                )}
+                
+                <div className="space-y-4">
+                  <div className="text-6xl font-bold text-prosterite-blue">
+                    {pkg.bottles}
+                  </div>
+                  <p className="text-gray-600">Frascos</p>
+                  
+                  {pkg.discount && (
+                    <div className="bg-prosterite-green text-white px-3 py-1 rounded-full text-sm font-bold">
+                      {pkg.discount}
+                    </div>
+                  )}
+                  
+                  <div className="text-2xl font-bold text-prosterite-blue">
+                    {pkg.price}
+                  </div>
+                  
+                  <Button variant="cta" className="w-full">
+                    COMPRAR AGORA
+                  </Button>
+                </div>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Formula Section */}
+      <section className="py-16 bg-prosterite-light-gray">
+        <div className="container mx-auto">
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            <div>
+              <h2 className="text-3xl font-bold text-prosterite-blue mb-6">
+                FÓRMULA EXCLUSIVA
+              </h2>
+              <p className="text-gray-700 text-lg leading-relaxed mb-6">
+                O Prosterite utiliza uma combinação única de ativos naturais cuidadosamente selecionados para proporcionar máxima eficácia no cuidado da próstata. Nossa fórmula exclusiva é segura, natural e comprovadamente eficaz.
+              </p>
+              <p className="text-gray-700">
+                Desenvolvido com tecnologia avançada e ingredientes de alta qualidade, o Prosterite oferece uma abordagem completa para a saúde masculina.
+              </p>
+            </div>
+            
+            <div className="flex justify-center">
+              <img 
+                src={prostateAnatomy} 
+                alt="Ação do Prosterite na Próstata" 
+                className="max-w-md w-full h-auto rounded-lg"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Usage Instructions */}
+      <section className="py-16 bg-prosterite-blue">
+        <div className="container mx-auto text-center">
+          <h2 className="text-3xl font-bold text-white mb-12">
+            MODO DE USO
+          </h2>
+          
+          <div className="grid md:grid-cols-3 gap-8">
+            <div className="text-center">
+              <div className="bg-white rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-4">
+                <span className="text-3xl font-bold text-prosterite-blue">2</span>
+              </div>
+              <h3 className="text-xl font-bold text-white mb-2">Tomar 2 cápsulas</h3>
+              <p className="text-gray-300">ao dia</p>
+            </div>
+            
+            <div className="text-center">
+              <div className="bg-white rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-4">
+                <Droplets className="w-8 h-8 text-prosterite-blue" />
+              </div>
+              <h3 className="text-xl font-bold text-white mb-2">Antes das refeições</h3>
+              <p className="text-gray-300">principais</p>
+            </div>
+            
+            <div className="text-center">
+              <div className="bg-white rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-4">
+                <div className="w-8 h-8 bg-blue-500 rounded-full"></div>
+              </div>
+              <h3 className="text-xl font-bold text-white mb-2">Beber com água</h3>
+              <p className="text-gray-300">para melhor absorção</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Composition */}
+      <section className="py-16 bg-white">
+        <div className="container mx-auto text-center">
+          <h2 className="text-3xl font-bold text-prosterite-blue mb-12">
+            COMPOSIÇÃO DO ÓLEO MILAGROSO
+          </h2>
+          
+          <div className="grid md:grid-cols-3 gap-6">
+            {ingredients.map((ingredient, index) => (
+              <Card key={index} className="p-6 hover:shadow-lg transition-shadow">
+                <div className="space-y-4">
+                  <div className="w-16 h-16 bg-prosterite-light-gray rounded-full mx-auto flex items-center justify-center">
+                    <div className="w-8 h-8 bg-prosterite-green rounded-full"></div>
+                  </div>
+                  <h3 className="font-bold text-prosterite-blue">{ingredient.name}</h3>
+                  <p className="text-gray-600 text-sm">{ingredient.description}</p>
+                </div>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Second Testimonials */}
+      <section className="py-16 bg-prosterite-blue">
+        <div className="container mx-auto text-center">
+          <h2 className="text-3xl font-bold text-white mb-4">
+            RESULTADOS QUE <span className="text-prosterite-yellow">MUDAM A VIDA</span> DE NOSSOS CLIENTES
+          </h2>
+          
+          <div className="grid md:grid-cols-3 gap-8 mt-12">
+            {testimonials.map((testimonial, index) => (
+              <Card key={index} className="p-6 bg-white">
+                <div className="flex justify-center mb-2">
+                  {[...Array(testimonial.rating)].map((_, i) => (
+                    <Star key={i} className="w-5 h-5 text-prosterite-yellow fill-current" />
+                  ))}
+                </div>
+                <p className="text-gray-700 mb-4">"{testimonial.text}"</p>
+                <div>
+                  <p className="font-bold text-prosterite-blue">{testimonial.name}</p>
+                  <p className="text-gray-500 text-sm">{testimonial.age}</p>
+                </div>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Guarantee Section */}
+      <section className="py-16 bg-white">
+        <div className="container mx-auto">
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            <div className="flex justify-center">
+              <img 
+                src={doctorTestimonial} 
+                alt="Médico recomenda Prosterite" 
+                className="max-w-md w-full h-auto rounded-lg"
+              />
+            </div>
+            
+            <div className="space-y-6">
+              <h2 className="text-3xl font-bold text-prosterite-blue">
+                PRODUTO COM FABRICAÇÃO AUTORIZADA PELA ANVISA
+              </h2>
+              
+              <p className="text-gray-700 text-lg">
+                Garantia de satisfação: se não ficar completamente satisfeito, devolvemos seu dinheiro em até 30 dias.
+              </p>
+              
+              <div className="space-y-4">
+                <div className="flex items-center space-x-3">
+                  <Shield className="w-6 h-6 text-prosterite-green" />
+                  <span>Produto registrado na ANVISA</span>
+                </div>
+                <div className="flex items-center space-x-3">
+                  <Shield className="w-6 h-6 text-prosterite-green" />
+                  <span>Garantia de 30 dias</span>
+                </div>
+                <div className="flex items-center space-x-3">
+                  <Shield className="w-6 h-6 text-prosterite-green" />
+                  <span>Fabricação nacional</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Second Pricing Section */}
+      <section className="py-16 bg-prosterite-light-gray">
+        <div className="container mx-auto text-center">
+          <h2 className="text-3xl font-bold text-prosterite-blue mb-12">
+            ESCOLHA A MELHOR OFERTA PARA VOCÊ
+          </h2>
+          
+          <div className="grid md:grid-cols-4 gap-6">
+            {packages.map((pkg, index) => (
+              <Card key={index} className="p-6 relative border-2 hover:border-prosterite-green transition-colors">
+                {pkg.label && (
+                  <div className="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-prosterite-yellow text-prosterite-blue px-4 py-1 rounded-full text-xs font-bold">
+                    {pkg.label}
+                  </div>
+                )}
+                
+                <div className="space-y-4">
+                  <div className="text-6xl font-bold text-prosterite-blue">
+                    {pkg.bottles}
+                  </div>
+                  <p className="text-gray-600">Frascos</p>
+                  
+                  {pkg.discount && (
+                    <div className="bg-prosterite-green text-white px-3 py-1 rounded-full text-sm font-bold">
+                      {pkg.discount}
+                    </div>
+                  )}
+                  
+                  <div className="text-2xl font-bold text-prosterite-blue">
+                    {pkg.price}
+                  </div>
+                  
+                  <Button variant="cta" className="w-full">
+                    COMPRAR AGORA
+                  </Button>
+                </div>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ Section */}
+      <section className="py-16 bg-white">
+        <div className="container mx-auto max-w-4xl">
+          <h2 className="text-3xl font-bold text-prosterite-blue text-center mb-12">
+            DÚVIDAS FREQUENTES
+          </h2>
+          
+          <Accordion type="single" collapsible className="space-y-4">
+            {faqItems.map((item, index) => (
+              <AccordionItem key={index} value={`item-${index}`} className="border border-gray-200 rounded-lg px-6">
+                <AccordionTrigger className="text-left text-prosterite-blue font-semibold hover:no-underline">
+                  {item.question}
+                </AccordionTrigger>
+                <AccordionContent className="text-gray-700">
+                  {item.answer}
+                </AccordionContent>
+              </AccordionItem>
+            ))}
+          </Accordion>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="py-16 bg-prosterite-blue">
+        <div className="container mx-auto text-center space-y-8">
+          <Button variant="cta" className="inline-flex items-center space-x-2">
+            <Phone className="w-5 h-5" />
+            <span>Atendimento via WhatsApp</span>
+          </Button>
+          
+          <div className="flex justify-center space-x-8 text-white text-sm">
+            <a href="#" className="hover:text-prosterite-yellow">Termos de Uso</a>
+            <a href="#" className="hover:text-prosterite-yellow">Política de Privacidade</a>
+            <a href="#" className="hover:text-prosterite-yellow">Contato</a>
+          </div>
+          
+          <div className="flex justify-center space-x-4">
+            <div className="bg-white p-2 rounded">
+              <Shield className="w-6 h-6 text-prosterite-blue" />
+            </div>
+            <div className="bg-white p-2 rounded">
+              <Shield className="w-6 h-6 text-prosterite-blue" />
+            </div>
+            <div className="bg-white p-2 rounded">
+              <Shield className="w-6 h-6 text-prosterite-blue" />
+            </div>
+          </div>
+          
+          <p className="text-gray-300 text-sm">
+            © Prosterite – Todos os direitos reservados
+          </p>
+        </div>
+      </footer>
+    </div>
+  );
+};
+
+export default Index;
