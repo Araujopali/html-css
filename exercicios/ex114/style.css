@@ -1,0 +1,61 @@
+    header {
+     background-color:#FBE93E;
+     padding: 50px;
+     margin: px;
+
+    
+    }
+
+    header > h1 {
+        font-size: 50px;
+        font-weight: 800;
+        text-align: center;
+        
+    
+    }
+
+    header > h2 {
+        font-size: 20px;
+        text-align: center;
+        margin: 30px;
+
+    }
+
+    .bloco {
+        text-align: center;
+        margin-inline: 100px;
+        
+    }
+
+    .btn {
+      background: linear-gradient(to bottom, #28a745, #218838); /* verde com efeito */
+      color: white;
+      font-size: 25px;
+      font-weight: bold;
+      padding: 15px 40px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      box-shadow: 0px 3px 6px rgba(0,0,0,0.3);
+      transition: transform 0.2s, background 0.3s;
+
+     }
+
+     .btm {
+        text-align: center;
+
+
+     }
+
+    .btn:hover {
+      background: linear-gradient(to bottom, #34d058, #28a745); /* verde mais claro no hover */
+      transform: scale(1.05); /* efeito de zoom */
+    }
+
+    .btn:active {
+      transform: scale(0.98); /* efeito ao clicar */
+    }
+
+   
+
+  
