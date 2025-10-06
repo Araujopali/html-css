@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tabela de Preços - Exemplo</title>
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #f3f3f3;
+      color: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      flex-direction: column;
+    }
+
+    h2 {
+      color: #333;
+      margin-bottom: 40px;
+    }
+
+    .planos {
+      display: flex;
+      gap: 20px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .plano {
+      background-color: #0a0a0a;
+      border-radius: 10px;
+      width: 300px;
+      padding: 25px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.3);
+      text-align: center;
+      transition: transform 0.3s;
+    }
+
+    .plano:hover {
+      transform: scale(1.05);
+    }
+
+    .plano h3 {
+      color: #fff;
+      font-size: 1.2em;
+      margin-bottom: 10px;
+    }
+
+    .plano small {
+      color: #ccc;
+      display: block;
+      margin-bottom: 15px;
+    }
+
+    .plano img {
+      width: 300px;
+      margin-bottom: 15px;
+    }
+
+    .preco {
+      font-size: 1.8em;
+      font-weight: bold;
+      color: #00ff66;
+      margin-bottom: 10px;
+    }
+
+    .avista {
+      color: #aaa;
+      font-size: 0.9em;
+      margin-bottom: 15px;
+    }
+
+    .botao {
+      background-color: #00ff66;
+      color: #000;
+      font-weight: bold;
+      border: none;
+      border-radius: 5px;
+      padding: 12px 25px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .botao:hover {
+      background-color: #00cc55;
+    }
+
+    .pagamento {
+      margin-top: 15px;
+    }
+
+    .pagamento img {
+      width: 40px;
+      margin: 5px;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Escolha o melhor plano para você!</h2>
+
+  <div class="planos">
+    <div class="plano">
+      <h3>PAGUE 3 E LEVE 6!</h3>
+      <small>Desconto de 5% no PIX</small>
+      <img src="imagem/ozemax.png" alt="Produto 6x">
+      <p class="preco">12x de R$ 39,88</p>
+      <p class="avista">ou R$ 397,00 à vista</p>
+      <button class="botao">COMPRAR AGORA!</button>
+      <div class="pagamento">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/4/41/Visa_Logo.png" alt="Visa">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/0/04/Mastercard-logo.png" alt="Mastercard">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/3/30/American_Express_logo_%282018%29.svg" alt="Amex">
+      </div>
+    </div>
+
+    <div class="plano">
+      <h3>PAGUE 2 E LEVE 3!</h3>
+      <small>Desconto de 5% no PIX</small>
+      <img src="imagem/ozemax.png" alt="Produto 3x">
+      <p class="preco">12x de R$ 29,84</p>
+      <p class="avista">ou R$ 297,00 à vista</p>
+      <button class="botao">COMPRAR AGORA!</button>
+      <div class="pagamento">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/4/41/Visa_Logo.png" alt="Visa">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/0/04/Mastercard-logo.png" alt="Mastercard">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/3/30/American_Express_logo_%282018%29.svg" alt="Amex">
+      </div>
+    </div>
+
+    <div class="plano">
+      <h3>QUERO TESTAR</h3>
+      <small>Desconto de 5% no PIX</small>
+      <img src="imagem/ozemax.png" alt="Produto 1x">
+      <p class="preco">12x de R$ 19,79</p>
+      <p class="avista">ou R$ 197,00 à vista</p>
+      <button class="botao">COMPRAR AGORA!</button>
+      <div class="pagamento">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/4/41/Visa_Logo.png" alt="Visa">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/0/04/Mastercard-logo.png" alt="Mastercard">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/3/30/American_Express_logo_%282018%29.svg" alt="Amex">
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
